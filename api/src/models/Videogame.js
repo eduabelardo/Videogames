@@ -16,6 +16,7 @@ module.exports = (sequelize) => {
 		},
 		description: {
 			type: DataTypes.TEXT,
+			allowNull: false,
 		},
 		released: {
 			type: DataTypes.INTEGER,
@@ -25,6 +26,7 @@ module.exports = (sequelize) => {
 		},
 		plataforms: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		image: {
 			type: DataTypes.TEXT,
