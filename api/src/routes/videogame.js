@@ -6,7 +6,7 @@ const {v4: v4, version} = require('uuid');
 const db = require('../db');
 const router = Router();
 const getVideogames = async (req, res, next) => {
-	const {name, pageSize, currentPage} = req.query;
+	const {name} = req.query;
 
 	try {
 		let apiGames = [];
@@ -55,7 +55,7 @@ const getVideogames = async (req, res, next) => {
 				}
 			}
 			if (results.length > 0) {
-				games = results.slice(0, 16);
+				games = results.slice(0, 15);
 			} else {
 				return res.json({error: 'No se ha encontrado el juego'});
 			}
@@ -80,8 +80,8 @@ const createVideogame = async (req, res, next) => {
 			image,
 			genres,
 		});
-		genres.forEach(async (G) => {
-			let genresGame = await Generos.findOne({where: {id: G}});
+		genres.forEach(async (g) => {
+			let genresGame = await Generos.findOne({where: {id: g}});
 			await newVideoGame.addGeneros(genresGame);
 		});
 		res.json(newVideoGame);
@@ -103,17 +103,17 @@ const getVideogameById = async (req, res, next) => {
 			genres,
 			rating,
 			released,
-			description,
+			description_raw,
 		} = dataApi.data;
 		res.json({
 			id,
 			name,
 			background_image,
-			platforms: platforms.map((e) => e.platform.name),
-			genres: genres.map(({name}) => name),
+			platforms: platforms.map((e) => e.platform.name).join(', '),
+			genres: genres.map(({name}) => name).join(', '),
 			rating,
 			released,
-			description,
+			description: description_raw,
 		});
 	} catch (error) {
 		next(error);

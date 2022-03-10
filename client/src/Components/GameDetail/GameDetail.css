@@ -1,0 +1,31 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	background-color: #854f2bed;
+	width: 1000px;
+	align-items: center;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.container h3 {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+}
+.description {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 10px;
+}
+.container p {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Rajdhani:wght@500&family=VT323&display=swap');
+
+.navBar {
+	width: 100%;
+	height: 10vh;
+	background-color: #854f2b3d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom-width: 10px;
+}
+.Link {
+	text-decoration: none;
+}
+.Link :hover {
+	color: #70b237;
+	transition: 150ms;
+}
+.navBar div {
+	width: 20%;
+	height: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.home h3 {
+	text-decoration: none;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.createGame h3 {
+	text-decoration: none;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 50px;
+	font-weight: bold;
+}
+.aboutMe h3 {
+	text-decoration: none;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 50px;
+	font-weight: bold;
+}
+.searchbar {
+	display: flex;
+}
+
+.searchbar input {
+	text-decoration: none;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	color: white;
+	height: 90%;
+	background-color: transparent;
+	border-radius: 10px 0px 0px 10px;
+	border: 1px solid#70b237;
+	padding: 5px;
+}
+
+.searchbar form button {
+	color: white;
+	text-decoration: solid;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	height: 100%;
+	border-radius: 0px 10px 10px 0px;
+	border: 1px #70b237;
+	background-color: #70b237;
+	padding: 6px;
+}
+
+.searchbar input:hover {
+	cursor: pointer;
+	border-color: white;
+}
+
+.searchbar form button:hover {
+	cursor: pointer;
+	color: white;
+	transition: 150ms;
+}

@@ -1,0 +1,46 @@
+.card {
+	width: 100px;
+	height: 300px;
+	align-items: center;
+	background-color: #db851c9b;
+	background-size: contain;
+	opacity: initial;
+	display: flex;
+	flex-direction: column;
+	vertical-align: bottom;
+	width: 250px;
+	color: white;
+	border-radius: 2ex 2ex 2ex 2ex;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: left;
+}
+.button {
+	margin-top: 15px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 15px;
+	text-shadow: #70b237;
+	height: 100%;
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px #70b237;
+	background-color: #70b237;
+	cursor: pointer;
+}
+.textCard {
+	margin-top: 10px;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 18px;
+}
+.button:hover {
+	cursor: pointer;
+	color: #477a1e;
+	transition: 150ms;
+}

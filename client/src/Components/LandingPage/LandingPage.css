@@ -1,0 +1,32 @@
+.title {
+	align-items: center;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.background {
+	text-align: center;
+	background-image: url('./Img/minecraft-minimalist-16.jpg');
+	background-size: cover;
+	min-height: 100vh;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.title button {
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 50px;
+	font-weight: 700;
+	background-color: rgba(0, 0, 0, 0.192);
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	border: 2px solid white;
+}

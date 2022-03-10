@@ -1,0 +1,52 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	background-color: #854f2bed;
+	width: 1000px;
+	align-items: center;
+	border-radius: 10px 10px 10px 10px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+}
+.form h1 {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 50px;
+}
+.form h3 {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 25px;
+}
+.input {
+	text-decoration: none;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	height: 90%;
+	background-color: transparent;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px solid#8FCA5C;
+	padding: 5px;
+}
+.submit {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	height: 100%;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px #8fca5c;
+	background-color: #8fca5c;
+	padding: 5px;
+}
