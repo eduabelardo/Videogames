@@ -15,12 +15,7 @@ export default function GameDetail(data) {
 	return (
 		<div className='container'>
 			<div className='image'>
-				<img
-					width='400px'
-					height='250px'
-					src={game.background_image}
-					alt='Game'
-				/>
+				<img width='400px' height='250px' src={game.image} alt='Game' />
 			</div>
 			<div>
 				<h3>{game.name}</h3>

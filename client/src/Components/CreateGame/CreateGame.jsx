@@ -97,7 +97,7 @@ export default function CreateGame() {
 					/>
 				</div>
 				<div>
-					<label>Image(URL) </label>
+					<label>Image (URL) </label>
 					<input
 						className='input'
 						type='text'

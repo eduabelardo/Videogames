@@ -117,25 +117,18 @@ const getVideogameById = async (req, res, next) => {
 			const dataApi = await axios.get(
 				`https://api.rawg.io/api/games/${idGame}?key=${api_key}`
 			);
-			let {
-				id,
-				name,
-				background_image,
-				platforms,
-				genres,
-				rating,
-				released,
-				description_raw,
-			} = dataApi.data;
+
 			res.json({
-				id,
-				name,
-				background_image,
-				platforms: platforms.map((e) => e.platform.name).join(', '),
-				genres: genres.map(({name}) => name).join(', '),
-				rating,
-				released,
-				description: description_raw,
+				id: dataApi.data.id,
+				name: dataApi.data.name,
+				image: dataApi.data.background_image,
+				platforms: dataApi.data.platforms
+					.map((e) => e.platform.name)
+					.join(', '),
+				genres: dataApi.data.genres.map(({name}) => name).join(', '),
+				rating: dataApi.data.rating,
+				released: dataApi.data.released,
+				description: dataApi.data.description_raw,
 			});
 		}
 	} catch (error) {
