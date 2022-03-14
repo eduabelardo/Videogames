@@ -17,7 +17,7 @@ export default function Card(data) {
 			<div className='textCard'>
 				<div className='nameGenres'>
 					<div className='name'>{data.name}</div>
-					<div className='genres'>{data.genres.toString()}</div>
+					<div className='genres'>{data.genres}</div>
 				</div>
 				<div className='rating'>
 					<div className='rating'>{data.rating}</div>

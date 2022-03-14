@@ -35,8 +35,9 @@
 	overflow: hidden;
 }
 .Cards {
-	margin-top: 20px;
+	align-items: center;
 	justify-content: center;
+	margin-top: 20px;
 	text-decoration: none;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
@@ -65,4 +66,22 @@
 	cursor: pointer;
 	color: white;
 	transition: 150ms;
+}
+.buttonsContainer {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.buttonSelect {
+	color: white;
+	background-color: #70b237;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 15px;
+	height: 100%;
+	border-radius: 10px 10px 10px 10px;
+	cursor: pointer;
 }

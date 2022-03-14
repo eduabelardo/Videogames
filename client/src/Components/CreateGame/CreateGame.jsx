@@ -1,33 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './CreateGame.css';
+import {createGame} from '../../Actions/Index';
+import {useDispatch, useSelector} from 'react-redux';
 
 export default function CreateGame() {
-	let [input, setInput] = React.useState({
+	const dispatch = useDispatch();
+	const genres = useSelector((state) => state.allGenres);
+
+	let [genresId, setGenresId] = useState([]);
+	let [input, setInput] = useState({
 		name: '',
 		description: '',
 		released: '',
-		raiting: 0,
+		rating: 0,
 		image: '',
-		genres: [],
-		platforms: [],
+		platforms: '',
 	});
 
 	let handleChange = (e) => {
 		e.preventDefault();
 		setInput((prev) => ({...prev, [e.target.name]: e.target.value}));
 	};
+
 	let handleSubmit = (e) => {
 		e.preventDefault();
+		dispatch(
+			createGame({
+				name: input.name,
+				description: input.description,
+				released: input.released,
+				rating: input.rating,
+				image: input.image,
+				platforms: input.platforms,
+				genres: genresId,
+			})
+		);
 		setInput({
 			name: '',
 			description: '',
 			released: '',
-			raiting: 0,
+			rating: 0,
 			image: '',
-			genres: [],
-			platforms: [],
+			platforms: '',
 		});
+		setGenresId([]);
 	};
+	let handleGenres = (e) => {
+		setGenresId([...genresId, parseInt(e.target.value)]);
+		console.log(input);
+		console.log(genresId);
+	};
+
 	return (
 		<div className='form'>
 			<h1>CREATE YOUR OWN GAME</h1>
@@ -64,12 +87,12 @@ export default function CreateGame() {
 					/>
 				</div>
 				<div>
-					<label>Raiting </label>
+					<label>Rating </label>
 					<input
 						className='input'
 						type='number'
-						name={'raiting'}
-						value={input.raiting}
+						name={'rating'}
+						value={input.rating}
 						onChange={(e) => handleChange(e)}
 					/>
 				</div>
@@ -84,7 +107,35 @@ export default function CreateGame() {
 					/>
 				</div>
 				<div>
-					<input className='submit' type='submit' value={'Create Game'} />
+					<label>Platforms </label>
+					<input
+						className='input'
+						type='text'
+						name={'platforms'}
+						value={input.platforms}
+						onChange={(e) => handleChange(e)}
+					/>
+				</div>
+				<select onChange={(e) => handleGenres(e)}>
+					<option value='All'>Genres</option>
+					{genres
+						? genres
+								.sort((a, b) => {
+									if (a.name > b.name) return 1;
+									if (b.name > a.name) return -1;
+									return 0;
+								})
+								.map((e) => {
+									return (
+										<option key={e.id} value={e.id}>
+											{e.name}
+										</option>
+									);
+								})
+						: []}
+				</select>
+				<div>
+					<input className='submit' type='submit' />
 				</div>
 			</form>
 		</div>

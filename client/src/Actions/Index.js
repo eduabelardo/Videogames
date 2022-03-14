@@ -1,4 +1,11 @@
-import {GET_VIDEOGAMES, SEARCH_VIDEOGAMES, GET_GAME_BYID} from './Variables';
+import {
+	GET_VIDEOGAMES,
+	SEARCH_VIDEOGAMES,
+	GET_GAME_BYID,
+	GET_GENRES,
+	ORDER_GAMES,
+	ORDER_BY_GENRE,
+} from './Variables';
 import axios from 'axios';
 
 export function getVideogames(page, videogamesPerPage) {
@@ -37,4 +44,29 @@ export function getGameById(id) {
 			console.log(error);
 		}
 	};
+}
+export function getGenres() {
+	return async function (dispatch) {
+		try {
+			const result = await axios('http://localhost:3001/generos');
+			return dispatch({type: GET_GENRES, payload: result.data});
+		} catch (error) {
+			console.log(error);
+		}
+	};
+}
+export function createGame(input) {
+	return async function () {
+		try {
+			await axios.post('http://localhost:3001/videogame', input);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+}
+export function orderGames(order) {
+	return {type: ORDER_GAMES, payload: order};
+}
+export function orderByGenre(order) {
+	return {type: ORDER_BY_GENRE, payload: order};
 }
