@@ -5,6 +5,7 @@ import {
 	GET_GENRES,
 	ORDER_GAMES,
 	ORDER_BY_GENRE,
+	ORDER_BY_EXISTANCE,
 } from './Variables';
 import axios from 'axios';
 
@@ -69,4 +70,7 @@ export function orderGames(order) {
 }
 export function orderByGenre(order) {
 	return {type: ORDER_BY_GENRE, payload: order};
+}
+export function orderByExistance(order) {
+	return {type: ORDER_BY_EXISTANCE, payload: order};
 }

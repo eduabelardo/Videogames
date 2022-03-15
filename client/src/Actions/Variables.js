@@ -4,3 +4,4 @@ export const GET_GAME_BYID = 'GET_GAME_BYID';
 export const GET_GENRES = 'GET_GENRES';
 export const ORDER_GAMES = 'ORDER_GAMES';
 export const ORDER_BY_GENRE = 'ORDER_BY_GENRE';
+export const ORDER_BY_EXISTANCE = 'ORDER_BY_EXISTANCE';

@@ -6,6 +6,7 @@ import LandingPage from './Components/LandingPage/LandingPage.jsx';
 import CreateGame from './Components/CreateGame/CreateGame';
 import ContCards from './Components/ContCards/ContCards';
 import GameDetail from './Components/GameDetail/GameDetail';
+import AboutMe from './Components/About/About';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 			<Route exact path={'/createGame'} component={CreateGame} />
 			<Route exact path={'/home'} component={ContCards} />
 			<Route exact path={'/home/:id'} component={GameDetail} />
+			<Route exact path={'/aboutMe'} component={AboutMe} />
 		</div>
 	);
 }

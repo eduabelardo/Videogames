@@ -66,8 +66,16 @@ const getVideogames = async (req, res, next) => {
 	}
 };
 const createVideogame = async (req, res, next) => {
-	const {name, description, released, rating, platforms, image, genres} =
-		req.body;
+	const {
+		name,
+		description,
+		released,
+		rating,
+		source,
+		platforms,
+		image,
+		genres,
+	} = req.body;
 
 	try {
 		const newVideoGame = await Videogame.create({
@@ -76,6 +84,7 @@ const createVideogame = async (req, res, next) => {
 			description,
 			released,
 			rating,
+			source,
 			platforms,
 			image,
 			genres,
@@ -127,6 +136,7 @@ const getVideogameById = async (req, res, next) => {
 					.join(', '),
 				genres: dataApi.data.genres.map(({name}) => name).join(', '),
 				rating: dataApi.data.rating,
+				source: dataApi.data.source,
 				released: dataApi.data.released,
 				description: dataApi.data.description_raw,
 			});

@@ -5,6 +5,7 @@ import {
 	GET_GENRES,
 	ORDER_GAMES,
 	ORDER_BY_GENRE,
+	ORDER_BY_EXISTANCE,
 } from '../Actions/Variables';
 const initialState = {
 	videogames: null,
@@ -46,15 +47,15 @@ export default function rootReducer(state = initialState, action) {
 
 			if (action.payload === 'asc-alf') {
 				orderVideogames = state.videogames.sort((a, b) => {
-					if (a.name > b.name) return 1;
-					if (b.name > a.name) return -1;
+					if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+					if (b.name.toLowerCase() > a.name.toLowerCase()) return -1;
 					return 0;
 				});
 			}
 			if (action.payload === 'desc-alf') {
 				orderVideogames = state.videogames.sort((a, b) => {
-					if (b.name > a.name) return 1;
-					if (a.name > b.name) return -1;
+					if (b.name.toLowerCase() > a.name.toLowerCase()) return 1;
+					if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
 					return 0;
 				});
 			}
@@ -91,6 +92,29 @@ export default function rootReducer(state = initialState, action) {
 			return {
 				...state,
 				videogames: videogamesByGenre,
+			};
+
+		case ORDER_BY_EXISTANCE:
+			state.videogames = state.respaldData;
+			let sourceVideogames = state.videogames;
+
+			if (action.payload === 'null') {
+				sourceVideogames = state.videogames;
+			}
+
+			if (action.payload === 'old-games') {
+				sourceVideogames = state.videogames.filter(
+					(element) => element.source === 'API'
+				);
+			}
+			if (action.payload === 'new-games') {
+				sourceVideogames = state.videogames.filter(
+					(element) => element.source === 'DB'
+				);
+			}
+			return {
+				...state,
+				videogames: sourceVideogames,
 			};
 
 		default:

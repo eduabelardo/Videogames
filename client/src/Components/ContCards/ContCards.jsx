@@ -5,6 +5,7 @@ import {
 	getGenres,
 	orderGames,
 	orderByGenre,
+	orderByExistance,
 } from '../../Actions/Index.js';
 import Card from '../Card/Card';
 import './ContCards.css';
@@ -15,7 +16,6 @@ export default function ContCards() {
 	const [videogamesPerPage] = useState(15);
 	let videogames = useSelector((state) => state.videogames);
 	const genres = useSelector((state) => state.allGenres);
-	let respalData = useSelector((state) => state.respaldData);
 
 	useEffect(() => {
 		dispatch(getVideogames());
@@ -27,10 +27,11 @@ export default function ContCards() {
 
 	const [order, setOrder] = useState('null');
 	const [genresOrder, setGenresOrder] = useState('null');
+	const [existanceOrder, setExistanceOrder] = useState('null');
 
 	useEffect(() => {
 		setPage(1);
-	}, [order, genresOrder]);
+	}, [order, genresOrder, existanceOrder]);
 
 	function selectByGenre(e) {
 		setGenresOrder(e);
@@ -44,12 +45,18 @@ export default function ContCards() {
 		setPage(1);
 	}
 
+	function sourceGames(e) {
+		setExistanceOrder(e);
+		dispatch(orderByExistance(e));
+		setPage(1);
+	}
+
 	//Paginado
 	let init = (page - 1) * videogamesPerPage;
 	let end = page * videogamesPerPage;
 
 	return (
-		<div className='cardsContainer'>
+		<div className='Container'>
 			<div className='Pagination'>
 				<button
 					className='button1'
@@ -62,7 +69,7 @@ export default function ContCards() {
 				<button
 					className='button2'
 					onClick={() => setPage(page + 1)}
-					disabled={page === 6}
+					disabled={page === 7}
 				>
 					Next Page
 				</button>
@@ -86,6 +93,14 @@ export default function ContCards() {
 				</select>
 				<select
 					className='buttonSelect'
+					onChange={(e) => sourceGames(e.target.value)}
+				>
+					<option value='null'>Old and New</option>
+					<option value='old-games'>Old Games</option>
+					<option value='new-games'>New Games</option>
+				</select>
+				<select
+					className='buttonSelect'
 					onChange={(e) => selectByGenre(e.target.value)}
 				>
 					<option value='null'>Genres</option>
@@ -106,37 +121,26 @@ export default function ContCards() {
 						: []}
 				</select>
 			</div>
-			<div>
+			<div className='cardsContainer'>
 				<div className='Cards'>
-					{videogames
-						? videogames
-								.slice(init, end)
-								.map((v) => (
-									<Card
-										key={v.id}
-										id={v.id}
-										name={v.name}
-										description={v.descriptions}
-										released={v.released}
-										rating={v.rating}
-										image={v.image}
-										genres={v.genres}
-									/>
-								))
-						: respalData
-								.slice(init, end)
-								.map((v) => (
-									<Card
-										key={v.id}
-										id={v.id}
-										name={v.name}
-										description={v.descriptions}
-										released={v.released}
-										rating={v.rating}
-										image={v.image}
-										genres={v.genres}
-									/>
-								))}
+					{videogames ? (
+						videogames
+							.slice(init, end)
+							.map((v) => (
+								<Card
+									key={v.id}
+									id={v.id}
+									name={v.name}
+									description={v.descriptions}
+									released={v.released}
+									rating={v.rating}
+									image={v.image}
+									genres={v.genres}
+								/>
+							))
+					) : (
+						<h3>'Loading games ...'</h3>
+					)}
 				</div>
 			</div>
 		</div>

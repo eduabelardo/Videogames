@@ -1,0 +1,49 @@
+.aboutContainer {
+	display: grid;
+	place-items: center;
+}
+.about {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	background-color: #854f2bed;
+	width: 1000px;
+	align-items: center;
+	border-radius: 10px 10px 10px 10px;
+}
+.profileImage {
+	background-image: url('./msg1740466539-639.jpg');
+	background-size: cover;
+	width: 400px;
+	height: 300px;
+}
+h3 {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+}
+p {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+}
+.buttonLink {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	height: 100%;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px #8fca5c;
+	background-color: #8fca5c;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.buttonLink:hover {
+	cursor: pointer;
+}

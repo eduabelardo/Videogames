@@ -1,10 +1,13 @@
+.form-container {
+	display: grid;
+	place-items: center;
+}
 .form {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	place-items: center;
 	margin-top: 20px;
 	background-color: #854f2bed;
 	width: 1000px;
-	align-items: center;
 	border-radius: 10px 10px 10px 10px;
 	color: white;
 	font-family: 'Oswald', sans-serif;
@@ -25,7 +28,12 @@
 	font-family: 'VT323', monospace;
 	font-size: 25px;
 }
+.inputContainer {
+	align-items: center;
+	justify-content: center;
+}
 .input {
+	align-items: center;
 	text-decoration: none;
 	color: white;
 	font-family: 'Oswald', sans-serif;
@@ -37,8 +45,11 @@
 	border-radius: 10px 10px 10px 10px;
 	border: 1px solid#8FCA5C;
 	padding: 5px;
+	margin-bottom: 10px;
 }
 .submit {
+	margin-top: 15px;
+	margin-bottom: 15px;
 	color: white;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
@@ -49,4 +60,26 @@
 	border: 1px #8fca5c;
 	background-color: #8fca5c;
 	padding: 5px;
+}
+.submit:hover {
+	cursor: pointer;
+}
+
+.genresButton {
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	height: 100%;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px #8fca5c;
+	background-color: #8fca5c;
+	padding: 5px;
+}
+.label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 5px;
 }

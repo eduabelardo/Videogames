@@ -8,10 +8,10 @@ export default function NavBar() {
 	const dispatch = useDispatch();
 	const [name, setName] = useState('');
 
-	function handleName(data) {
+	function handleName(e) {
 		dispatch(searchVideogames(name));
-		data.preventDefault();
-		setName(data.target.value);
+		e.preventDefault();
+		setName(e.target.value);
 	}
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -19,7 +19,6 @@ export default function NavBar() {
 	}
 	function handleGetAllGames(e) {
 		e.preventDefault();
-
 		dispatch(getVideogames());
 	}
 

@@ -1,11 +1,16 @@
-.container {
-	display: flex;
-	flex-direction: column;
+.containerDetail {
+	display: grid;
+	place-items: center;
+}
+.gameDetail {
+	display: grid;
+	place-items: center;
 	margin-top: 20px;
 	background-color: #854f2bed;
 	width: 1000px;
 	align-items: center;
 	border-radius: 10px 10px 10px 10px;
+	margin-bottom: 20px;
 }
 
 .container h3 {
@@ -20,7 +25,10 @@
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
 	font-family: 'VT323', monospace;
-	font-size: 10px;
+	font-size: 25px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 .container p {
 	color: white;

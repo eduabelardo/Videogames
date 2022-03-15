@@ -1,3 +1,34 @@
+.Container {
+	margin-top: 5px;
+	overflow: hidden;
+}
+
+.Cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	margin-top: 20px;
+	text-decoration: none;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 15px;
+}
+.Cards .page {
+	color: rgba(0, 0, 0, 0.308);
+}
+.page {
+	color: #70b237;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+	font-weight: bolder;
+	height: 100%;
+	margin-top: 10px;
+}
 .Pagination {
 	text-decoration: none;
 	width: 100%;
@@ -7,6 +38,25 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+}
+.buttonsContainer {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.buttonSelect {
+	color: white;
+	background-color: #70b237;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'VT323', monospace;
+	font-size: 15px;
+	height: 100%;
+	border-radius: 10px 10px 10px 10px;
+	cursor: pointer;
+	margin-left: 10px;
 }
 .button1 {
 	color: white;
@@ -30,33 +80,7 @@
 	border-radius: 10px 10px 10px 10px;
 	cursor: pointer;
 }
-.cardsContainer {
-	margin-top: 5px;
-	overflow: hidden;
-}
-.Cards {
-	align-items: center;
-	justify-content: center;
-	margin-top: 20px;
-	text-decoration: none;
-	font-family: 'Oswald', sans-serif;
-	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
-	font-size: 15px;
-}
-.Cards .page {
-	color: rgba(0, 0, 0, 0.308);
-}
-.page {
-	color: #70b237;
-	font-family: 'Oswald', sans-serif;
-	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
-	font-size: 30px;
-	font-weight: bolder;
-	height: 100%;
-	margin-top: 20px;
-}
+
 .button1:hover {
 	cursor: pointer;
 	color: white;
@@ -66,22 +90,4 @@
 	cursor: pointer;
 	color: white;
 	transition: 150ms;
-}
-.buttonsContainer {
-	margin-top: 15px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-.buttonSelect {
-	color: white;
-	background-color: #70b237;
-	font-family: 'Oswald', sans-serif;
-	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
-	font-size: 15px;
-	height: 100%;
-	border-radius: 10px 10px 10px 10px;
-	cursor: pointer;
 }

@@ -12,6 +12,9 @@ export default function LandingPage() {
 					</button>
 				</Link>
 			</div>
+			<div className='footer'>
+				<p>App created by: Eduardo Abelardo</p>
+			</div>
 		</div>
 	);
 }

@@ -13,17 +13,19 @@ export default function GameDetail(data) {
 	}, [dispatch, id]);
 
 	return (
-		<div className='container'>
-			<div className='image'>
-				<img width='400px' height='250px' src={game.image} alt='Game' />
-			</div>
-			<div>
-				<h3>{game.name}</h3>
-				<p>Released: {game.released}</p>
-				<p>Rating: {game.rating}</p>
-				<p>Genres: {game.genres}</p>
-				<p>You can play it at: {game.platforms}</p>
-				<p className='description'>Description: {game.description}</p>
+		<div className='containerDetail'>
+			<div className='gameDetail'>
+				<div className='image'>
+					<img width='400px' height='250px' src={game.image} alt='Game' />
+				</div>
+				<div>
+					<h3>{game.name}</h3>
+					<p>Released: {game.released}</p>
+					<p>Rating: {game.rating}</p>
+					<p>Genres: {game.genres}</p>
+					<p>You can play it at: {game.platforms}</p>
+					<p className='description'>Description: {game.description}</p>
+				</div>
 			</div>
 		</div>
 	);
