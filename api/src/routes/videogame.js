@@ -84,7 +84,7 @@ const createVideogame = async (req, res, next) => {
 			description,
 			released,
 			rating,
-			source,
+			source: 'DB',
 			platforms,
 			image,
 			genres,

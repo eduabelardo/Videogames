@@ -5,6 +5,7 @@ const {Generos} = require('../db');
 
 const router = Router();
 
+//Traigo generos de API
 const getGeneros = async (req, res, next) => {
 	try {
 		let apiGenres = await axios.get(
@@ -20,6 +21,7 @@ const getGeneros = async (req, res, next) => {
 		console.log(error);
 	}
 };
+//Guardo generos en DB
 const returnGenres = async (req, res, next) => {
 	try {
 		const genresDB = await Generos.findAll();

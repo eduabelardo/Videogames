@@ -29,7 +29,7 @@ export default function CreateGame() {
 	//Funcion para validacion
 	let validateDates = (e) => {
 		if (e.target.name === 'name') {
-			if (e.target.value.length < 2 || e.target.value.length === '') {
+			if (e.target.value.length < 2) {
 				<span>{setNameError('You should whrite a name')}</span>;
 			} else {
 				setNameError('');
@@ -229,6 +229,7 @@ export default function CreateGame() {
 									})
 							: []}
 					</select>
+
 					{!genressError ? null : (
 						<span style={{color: 'red'}}> {genressError} </span>
 					)}

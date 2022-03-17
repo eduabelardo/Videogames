@@ -69,7 +69,10 @@ export default function ContCards() {
 				<button
 					className='button2'
 					onClick={() => setPage(page + 1)}
-					disabled={page === 7}
+					disabled={
+						videogames &&
+						Math.ceil(videogames.length / videogamesPerPage) === page
+					}
 				>
 					Next Page
 				</button>
