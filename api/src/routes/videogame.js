@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const {Videogame, Generos} = require('../db');
 const axios = require('axios');
-const {API_KEY} = process.env;
+const API_KEY = process.env.API_KEY;
 const {v4: v4, version} = require('uuid');
 const db = require('../db');
 const router = Router();
