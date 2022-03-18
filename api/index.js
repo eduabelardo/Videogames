@@ -23,7 +23,7 @@ const {getGeneros} = require('./src/routes/generos.js');
 
 // Syncing all the models at once. Guardo generos en DB cada vez que levanto el back
 conn.sync({force: true}).then(() => {
-	server.listen(3001, async () => {
+	server.listen(process.env.PORT, async () => {
 		const loadGenres = await getGeneros();
 		console.log('%s listening at 3001'); // eslint-disable-line no-console
 	});
