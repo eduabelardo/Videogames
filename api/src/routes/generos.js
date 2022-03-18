@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const axios = require('axios');
-const {API_KEY} = process.env;
+
 const {Generos} = require('../db');
 
 const router = Router();
@@ -9,7 +9,7 @@ const router = Router();
 const getGeneros = async (req, res, next) => {
 	try {
 		let apiGenres = await axios.get(
-			`https://api.rawg.io/api/genres?key=${API_KEY}`
+			`https://api.rawg.io/api/genres?key=${process.env.API_KEY}`
 		);
 		apiGenres.data.results.forEach((genre) => {
 			Generos.findOrCreate({
