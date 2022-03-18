@@ -12,7 +12,9 @@ const getVideogames = async (req, res, next) => {
 		let apiGames = [];
 		for (let i = 1; i < 6; i++) {
 			var response = await axios.get(
-				`https://api.rawg.io/api/games?key=${API_KEY}&page=${[i]}`
+				`https://api.rawg.io/api/games?key=147ef5f443674b29965dd87783b0dd9a&page=${[
+					i,
+				]}`
 			);
 			apiGames = [...apiGames, ...response.data.results];
 		}
@@ -124,7 +126,7 @@ const getVideogameById = async (req, res, next) => {
 			res.json(obj);
 		} else {
 			const dataApi = await axios.get(
-				`https://api.rawg.io/api/games/${idGame}?key=${API_KEY}`
+				`https://api.rawg.io/api/games/${idGame}?key=147ef5f443674b29965dd87783b0dd9a`
 			);
 
 			res.json({
