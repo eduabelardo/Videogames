@@ -1,6 +1,7 @@
 const {Router} = require('express');
 const {Videogame, Generos} = require('../db');
 const axios = require('axios');
+const {API_KEY} = process.env;
 const {v4: v4, version} = require('uuid');
 const db = require('../db');
 const router = Router();
@@ -11,7 +12,7 @@ const getVideogames = async (req, res, next) => {
 		let apiGames = [];
 		for (let i = 1; i < 6; i++) {
 			var response = await axios.get(
-				`https://api.rawg.io/api/games?key=${process.env.API_KEY}&page=${[i]}`
+				`https://api.rawg.io/api/games?key=${API_KEY}&page=${[i]}`
 			);
 			apiGames = [...apiGames, ...response.data.results];
 		}
@@ -123,7 +124,7 @@ const getVideogameById = async (req, res, next) => {
 			res.json(obj);
 		} else {
 			const dataApi = await axios.get(
-				`https://api.rawg.io/api/games/${idGame}?key=${process.env.API_KEY}`
+				`https://api.rawg.io/api/games/${idGame}?key=${API_KEY}`
 			);
 
 			res.json({
