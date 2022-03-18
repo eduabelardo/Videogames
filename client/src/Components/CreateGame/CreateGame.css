@@ -1,65 +1,76 @@
 .form-container {
 	display: grid;
 	place-items: center;
+	text-align: center;
+	color: white;
 }
-.form {
+.title {
 	display: grid;
 	place-items: center;
-	margin-top: 20px;
-	background-color: #854f2bed;
-	width: 1000px;
-	border-radius: 10px 10px 10px 10px;
+	text-align: center;
 	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 }
 .form h1 {
-	color: white;
-	font-family: 'Oswald', sans-serif;
-	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 50px;
 }
 .form h3 {
-	color: white;
-	font-family: 'Oswald', sans-serif;
-	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 25px;
 }
-.inputContainer {
-	align-items: center;
-	justify-content: center;
-}
-.input {
-	align-items: center;
-	text-decoration: none;
-	color: white;
+.form {
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 1000px;
+	border-radius: 10px 10px 10px 10px;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
+}
+.inputContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.inputBox {
+	color: white;
+	text-align: center;
+	font-family: 'Bebas Neue', cursive;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
 	font-size: 20px;
 	height: 90%;
-	background-color: transparent;
+	background: #eb68a1;
 	border-radius: 10px 10px 10px 10px;
-	border: 1px solid#8FCA5C;
+	border: 0ex;
 	padding: 5px;
 	margin-bottom: 10px;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
+
 .submit {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 20px;
 	height: 100%;
+	border: 0ex;
 	border-radius: 10px 10px 10px 10px;
-	border: 1px #8fca5c;
-	background-color: #8fca5c;
+	background: #79a9e2;
 	padding: 5px;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
 .submit:hover {
 	cursor: pointer;
@@ -67,19 +78,12 @@
 
 .genresButton {
 	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 20px;
 	height: 100%;
 	border-radius: 10px 10px 10px 10px;
-	border: 1px #8fca5c;
-	background-color: #8fca5c;
+	background: #eb68a1;
 	padding: 5px;
-}
-.label {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 5px;
 }

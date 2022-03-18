@@ -23,9 +23,11 @@ export default function Card(data) {
 					<div className='rating'>{data.rating}</div>
 				</div>
 			</div>
-			<Link to={`/home/${data.id}`}>
-				<button className='button'>See More!</button>
-			</Link>
+			<div className='buttonHolder'>
+				<Link to={`/home/${data.id}`}>
+					<button className='button'>See More!</button>
+				</Link>
+			</div>
 		</div>
 	);
 }

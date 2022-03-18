@@ -1,6 +1,7 @@
 .aboutContainer {
 	display: grid;
 	place-items: center;
+	text-align: center;
 }
 .about {
 	display: flex;
@@ -10,39 +11,51 @@
 	width: 1000px;
 	align-items: center;
 	border-radius: 10px 10px 10px 10px;
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+	margin-bottom: 20px;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
 .profileImage {
 	background-image: url('./msg1740466539-639.jpg');
 	background-size: cover;
-	width: 400px;
-	height: 300px;
+	width: 500px;
+	height: 350px;
+	margin-top: 20px;
+	border-radius: 2ex 2ex 2ex 2ex;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
 h3 {
 	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 30px;
 }
 p {
 	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 20px;
 }
 .buttonLink {
 	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 20px;
 	height: 100%;
+	border: 0ex;
 	border-radius: 10px 10px 10px 10px;
-	border: 1px #8fca5c;
-	background-color: #8fca5c;
+	background: #79a9e2;
 	padding: 5px;
 	margin-bottom: 10px;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
 .buttonLink:hover {
 	cursor: pointer;

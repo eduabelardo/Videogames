@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import './CreateGame.css';
 import {createGame} from '../../Actions/Index';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 export default function CreateGame() {
 	const dispatch = useDispatch();
 	const genres = useSelector((state) => state.allGenres);
+	const history = useHistory();
 
 	//Estados para validacion
 	let [nameError, setNameError] = useState('');
@@ -15,6 +17,7 @@ export default function CreateGame() {
 	let [imageError, setImageError] = useState('');
 	let [platformsError, setPlatformsError] = useState('');
 	let [genressError, setGenressError] = useState('');
+	let [gameCreated, setGameCreated] = useState('');
 
 	let [genresId, setGenresId] = useState([]);
 	let [input, setInput] = useState({
@@ -119,6 +122,10 @@ export default function CreateGame() {
 			platforms: '',
 		});
 		setGenresId([]);
+		setGameCreated('Game created correctly!');
+		setTimeout(() => {
+			history.push('/home');
+		}, 3000);
 	};
 	let handleGenres = (e) => {
 		e.preventDefault();
@@ -129,14 +136,15 @@ export default function CreateGame() {
 	return (
 		<div className='form-container'>
 			<div className='form'>
-				<h1>CREATE YOUR OWN GAME</h1>
-
-				<h3>Complete the next form</h3>
-				<form onSubmit={(e) => handleSubmit(e)}>
+				<div className='title'>
+					<h1>CREATE YOUR OWN GAME</h1>
+					<h3>Complete the next form</h3>
+				</div>
+				<form className='form' onSubmit={(e) => handleSubmit(e)}>
 					<div className='inputContainer'>
-						<label className='label'>Name </label>
 						<input
-							className='input'
+							placeholder='Name'
+							className='inputBox'
 							type='text'
 							name={'name'}
 							value={input.name}
@@ -145,11 +153,10 @@ export default function CreateGame() {
 						{!nameError ? null : (
 							<span style={{color: 'red'}}> {nameError} </span>
 						)}
-					</div>
-					<div>
-						<label className='label'>Description </label>
+
 						<input
-							className='input'
+							placeholder='Description'
+							className='inputBox'
 							type='text'
 							name={'description'}
 							value={input.description}
@@ -158,11 +165,46 @@ export default function CreateGame() {
 						{!descriptError ? null : (
 							<span style={{color: 'red'}}> {descriptError} </span>
 						)}
-					</div>
-					<div>
-						<label className='label'>Released </label>
+
 						<input
-							className='input'
+							placeholder='Raiting'
+							className='inputBox'
+							type='number'
+							name={'rating'}
+							value={input.rating}
+							onChange={(e) => handleChange(e)}
+						/>
+						{!ratingError ? null : (
+							<span style={{color: 'red'}}> {ratingError} </span>
+						)}
+
+						<input
+							placeholder='Image URL'
+							className='inputBox'
+							type='text'
+							name={'image'}
+							value={input.image}
+							onChange={(e) => handleChange(e)}
+						/>
+						{!imageError ? null : (
+							<span style={{color: 'red'}}> {imageError} </span>
+						)}
+
+						<input
+							placeholder='Platforms'
+							className='inputBox'
+							type='text'
+							name={'platforms'}
+							value={input.platforms}
+							onChange={(e) => handleChange(e)}
+						/>
+						{!platformsError ? null : (
+							<span style={{color: 'red'}}> {platformsError} </span>
+						)}
+
+						<input
+							placeholder='Released'
+							className='inputBox'
 							type='date'
 							name={'released'}
 							value={input.released}
@@ -172,45 +214,7 @@ export default function CreateGame() {
 							<span style={{color: 'red'}}> {realisedtError} </span>
 						)}
 					</div>
-					<div>
-						<label className='label'>Rating </label>
-						<input
-							className='input'
-							type='number'
-							name={'rating'}
-							value={input.rating}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!ratingError ? null : (
-							<span style={{color: 'red'}}> {ratingError} </span>
-						)}
-					</div>
-					<div>
-						<label className='label'>Image (URL) </label>
-						<input
-							className='input'
-							type='text'
-							name={'image'}
-							value={input.image}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!imageError ? null : (
-							<span style={{color: 'red'}}> {imageError} </span>
-						)}
-					</div>
-					<div>
-						<label className='label'>Platforms </label>
-						<input
-							className='input'
-							type='text'
-							name={'platforms'}
-							value={input.platforms}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!platformsError ? null : (
-							<span style={{color: 'red'}}> {platformsError} </span>
-						)}
-					</div>
+
 					<select className='genresButton' onChange={(e) => handleGenres(e)}>
 						<option value='default'>Genres</option>
 						{genres
@@ -234,21 +238,23 @@ export default function CreateGame() {
 						<span style={{color: 'red'}}> {genressError} </span>
 					)}
 
-					<div>
-						<input
-							className='submit'
-							type='submit'
-							disabled={
-								nameError !== '' ||
-								descriptError !== '' ||
-								realisedtError !== '' ||
-								ratingError !== '' ||
-								imageError !== '' ||
-								platformsError !== '' ||
-								genressError !== ''
-							}
-						/>
-					</div>
+					<input
+						action='/home'
+						className='submit'
+						type='submit'
+						disabled={
+							nameError !== '' ||
+							descriptError !== '' ||
+							realisedtError !== '' ||
+							ratingError !== '' ||
+							imageError !== '' ||
+							platformsError !== '' ||
+							genressError !== ''
+						}
+					/>
+					{!gameCreated ? null : (
+						<span style={{color: 'withe'}}> {gameCreated} </span>
+					)}
 				</form>
 			</div>
 		</div>

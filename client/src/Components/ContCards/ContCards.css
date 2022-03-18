@@ -1,6 +1,7 @@
 .Container {
 	margin-top: 5px;
 	overflow: hidden;
+	margin-bottom: 15px;
 }
 
 .Cards {
@@ -11,23 +12,24 @@
 	overflow: hidden;
 	margin-top: 20px;
 	text-decoration: none;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 15px;
 }
 .Cards .page {
-	color: rgba(0, 0, 0, 0.308);
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.226);
 }
 .page {
-	color: #70b237;
+	color: white;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bolder;
 	height: 100%;
 	margin-top: 10px;
+	text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.472);
 }
 .Pagination {
 	text-decoration: none;
@@ -38,6 +40,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+	margin-top: 10px;
 }
 .buttonsContainer {
 	margin-top: 15px;
@@ -45,40 +48,49 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.472);
 }
 .buttonSelect {
 	color: white;
-	background-color: #70b237;
+	background: #79a9e2;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 15px;
 	height: 100%;
+	border: 0ex;
 	border-radius: 10px 10px 10px 10px;
 	cursor: pointer;
 	margin-left: 10px;
+	text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.472);
 }
 .button1 {
 	color: white;
-	background-color: #70b237;
+	background: #79a9e2;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 15px;
 	height: 100%;
+	border: 0ex;
 	border-radius: 10px 10px 10px 10px;
 	cursor: pointer;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.226);
+	text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.472);
 }
 .button2 {
 	color: white;
-	background-color: #70b237;
+	background: #79a9e2;
+	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
-	font-family: 'VT323', monospace;
 	font-size: 15px;
 	height: 100%;
+	border: 0ex;
 	border-radius: 10px 10px 10px 10px;
 	cursor: pointer;
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.226);
+	text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.472);
 }
 
 .button1:hover {
