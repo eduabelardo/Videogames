@@ -35,30 +35,67 @@
 	font-family: 'Rajdhani', sans-serif;
 	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
-.inputContainer {
+.formBox {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
-.inputBox {
+.genresButton {
+	width: 104%;
 	color: white;
 	text-align: center;
 	font-family: 'Bebas Neue', cursive;
 	font-family: 'Oswald', sans-serif;
 	font-family: 'Rajdhani', sans-serif;
 	font-size: 20px;
-	height: 90%;
 	background: #eb68a1;
 	border-radius: 10px 10px 10px 10px;
 	border: 0ex;
 	padding: 5px;
-	margin-bottom: 10px;
+	margin-top: 30px;
 	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
 }
 
+.inputBox {
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-family: 'Bebas Neue', cursive;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+	font-size: 20px;
+	background: #eb68a1;
+	border-radius: 10px 10px 10px 10px;
+	border: 0ex;
+	padding: 5px;
+	margin-top: 30px;
+
+	box-shadow: 0 10px 50px rgba(7, 17, 19, 0.616);
+}
+.inputBox::placeholder {
+	color: white;
+}
+.inputleft {
+	display: flex;
+	flex-direction: column;
+}
+.inputright {
+	display: flex;
+	flex-direction: column;
+}
+.genresAndsubmit {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	vertical-align: bottom;
+	padding: 10px;
+	margin: 20px;
+}
+
 .submit {
-	margin-top: 15px;
+	margin-right: 15px;
 	margin-bottom: 15px;
 	color: white;
 	font-family: 'Bebas Neue', cursive;
@@ -74,16 +111,4 @@
 }
 .submit:hover {
 	cursor: pointer;
-}
-
-.genresButton {
-	color: white;
-	font-family: 'Bebas Neue', cursive;
-	font-family: 'Oswald', sans-serif;
-	font-family: 'Rajdhani', sans-serif;
-	font-size: 20px;
-	height: 100%;
-	border-radius: 10px 10px 10px 10px;
-	background: #eb68a1;
-	padding: 5px;
 }

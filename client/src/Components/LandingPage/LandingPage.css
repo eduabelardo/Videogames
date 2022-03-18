@@ -6,8 +6,10 @@
 }
 .title {
 	align-items: center;
-
 	margin-top: 80px;
+}
+a {
+	text-decoration: none;
 }
 
 .title button {

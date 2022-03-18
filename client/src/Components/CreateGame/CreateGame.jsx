@@ -140,121 +140,129 @@ export default function CreateGame() {
 					<h1>CREATE YOUR OWN GAME</h1>
 					<h3>Complete the next form</h3>
 				</div>
-				<form className='form' onSubmit={(e) => handleSubmit(e)}>
-					<div className='inputContainer'>
-						<input
-							placeholder='Name'
-							className='inputBox'
-							type='text'
-							name={'name'}
-							value={input.name}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!nameError ? null : (
-							<span style={{color: 'red'}}> {nameError} </span>
-						)}
+				<form autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
+					<div className='formBox'>
+						<div className='inputleft'>
+							<input
+								placeholder='Name'
+								className='inputBox'
+								type='text'
+								name={'name'}
+								value={input.name}
+								onChange={(e) => handleChange(e)}
+							/>
+							{!nameError ? null : (
+								<span style={{color: 'red'}}> {nameError} </span>
+							)}
 
-						<input
-							placeholder='Description'
-							className='inputBox'
-							type='text'
-							name={'description'}
-							value={input.description}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!descriptError ? null : (
-							<span style={{color: 'red'}}> {descriptError} </span>
-						)}
+							<input
+								placeholder='Description'
+								className='inputBox'
+								type='text'
+								name={'description'}
+								value={input.description}
+								onChange={(e) => handleChange(e)}
+							/>
+							{!descriptError ? null : (
+								<span style={{color: 'red'}}> {descriptError} </span>
+							)}
 
-						<input
-							placeholder='Raiting'
-							className='inputBox'
-							type='number'
-							name={'rating'}
-							value={input.rating}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!ratingError ? null : (
-							<span style={{color: 'red'}}> {ratingError} </span>
-						)}
+							<input
+								placeholder='Raiting'
+								className='inputBox'
+								type='number'
+								name={'rating'}
+								value={input.rating}
+								onChange={(e) => handleChange(e)}
+							/>
+							{!ratingError ? null : (
+								<span style={{color: 'red'}}> {ratingError} </span>
+							)}
+							<>
+								<select
+									className='genresButton'
+									onChange={(e) => handleGenres(e)}
+								>
+									<option value='default'>Genres</option>
+									{genres
+										? genres
+												.sort((a, b) => {
+													if (a.name > b.name) return 1;
+													if (b.name > a.name) return -1;
+													return 0;
+												})
+												.map((e) => {
+													return (
+														<option key={e.id} value={e.id}>
+															{e.name}
+														</option>
+													);
+												})
+										: []}
+								</select>
 
-						<input
-							placeholder='Image URL'
-							className='inputBox'
-							type='text'
-							name={'image'}
-							value={input.image}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!imageError ? null : (
-							<span style={{color: 'red'}}> {imageError} </span>
-						)}
+								{!genressError ? null : (
+									<span style={{color: 'red'}}> {genressError} </span>
+								)}
+							</>
+						</div>
+						<div className='inputright'>
+							<input
+								placeholder='Image URL'
+								className='inputBox'
+								type='text'
+								name={'image'}
+								value={input.image}
+								onChange={(e) => handleChange(e)}
+							/>
+							{!imageError ? null : (
+								<span style={{color: 'red'}}> {imageError} </span>
+							)}
 
-						<input
-							placeholder='Platforms'
-							className='inputBox'
-							type='text'
-							name={'platforms'}
-							value={input.platforms}
-							onChange={(e) => handleChange(e)}
-						/>
-						{!platformsError ? null : (
-							<span style={{color: 'red'}}> {platformsError} </span>
-						)}
+							<input
+								placeholder='Platforms'
+								className='inputBox'
+								type='text'
+								name={'platforms'}
+								value={input.platforms}
+								onChange={(e) => handleChange(e)}
+							/>
+							{!platformsError ? null : (
+								<span style={{color: 'red'}}> {platformsError} </span>
+							)}
 
+							<input
+								placeholder='Released'
+								className='inputBox'
+								type='date'
+								name={'released'}
+								value={input.released}
+								onChange={(e) => handleChange(e)}
+							/>
+							{!realisedtError ? null : (
+								<span style={{color: 'red'}}> {realisedtError} </span>
+							)}
+						</div>
+					</div>
+					<div className='genresAndsubmit'>
 						<input
-							placeholder='Released'
-							className='inputBox'
-							type='date'
-							name={'released'}
-							value={input.released}
-							onChange={(e) => handleChange(e)}
+							action='/home'
+							className='submit'
+							type='submit'
+							disabled={
+								nameError !== '' ||
+								descriptError !== '' ||
+								realisedtError !== '' ||
+								ratingError !== '' ||
+								imageError !== '' ||
+								platformsError !== '' ||
+								genressError !== ''
+							}
 						/>
-						{!realisedtError ? null : (
-							<span style={{color: 'red'}}> {realisedtError} </span>
+						{!gameCreated ? null : (
+							<span style={{color: 'withe'}}> {gameCreated} </span>
 						)}
 					</div>
-
-					<select className='genresButton' onChange={(e) => handleGenres(e)}>
-						<option value='default'>Genres</option>
-						{genres
-							? genres
-									.sort((a, b) => {
-										if (a.name > b.name) return 1;
-										if (b.name > a.name) return -1;
-										return 0;
-									})
-									.map((e) => {
-										return (
-											<option key={e.id} value={e.id}>
-												{e.name}
-											</option>
-										);
-									})
-							: []}
-					</select>
-
-					{!genressError ? null : (
-						<span style={{color: 'red'}}> {genressError} </span>
-					)}
-
-					<input
-						action='/home'
-						className='submit'
-						type='submit'
-						disabled={
-							nameError !== '' ||
-							descriptError !== '' ||
-							realisedtError !== '' ||
-							ratingError !== '' ||
-							imageError !== '' ||
-							platformsError !== '' ||
-							genressError !== ''
-						}
-					/>
-					{!gameCreated ? null : (
-						<span style={{color: 'withe'}}> {gameCreated} </span>
-					)}
 				</form>
 			</div>
 		</div>
