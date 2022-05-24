@@ -58,6 +58,7 @@ let capsEntries = entries.map((entry) => [
 	entry[1],
 ]);
 
+
 sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
